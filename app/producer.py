@@ -34,7 +34,7 @@ def delivery_report(err, msg):
 if __name__ == '__main__':
     producer = KafkaProducer().producer()
     running = True
-    topic = 'fenio'
+    topic = conf.get('kafka').get('topic')
     
     while running:
         wait_time = random.randint(1, 1000)

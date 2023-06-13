@@ -4,5 +4,5 @@ common:
 
 kafka:
   bootstrap.servers: localhost:9092
-  topic: kafka-python
+  topic: fenio
   group.id: linhnm
