@@ -1,0 +1,8 @@
+common:
+  name: kafka-research
+  author: Linhnm20
+
+kafka:
+  bootstrap.servers: localhost:9092
+  topic: kafka-python
+  group.id: linhnm
