@@ -2,6 +2,8 @@ from confluent_kafka import Producer
 from common.config_loader import Config
 from common.Singleton import Singleton
 import random
+import time
+
 
 conf = Config().conf()
 
@@ -30,7 +32,9 @@ def delivery_report(err, msg):
 
 if __name__ == '__main__':
     producer = KafkaProducer().producer()
-    for i in range(1000):
+    while True:
+        wait_time = random.randint(1, 1000)
+        time.sleep(wait_time * 1e-3)
         cust_id = random.randint(1, 1e6)
         source = random.randint(1, 64)
         target = random.randint(1, 64)
