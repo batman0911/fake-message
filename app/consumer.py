@@ -31,7 +31,7 @@ class KafkaConsumer(metaclass=Singleton):
 
 if __name__ == '__main__':
     consumer = KafkaConsumer().consumer()
-    consumer.subscribe(['python-kafka'])
+    consumer.subscribe(['fenio'])
     while True:
         msg = consumer.poll(1.0)
         if msg is None:

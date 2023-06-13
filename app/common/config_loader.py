@@ -10,7 +10,7 @@ def load_conf_yaml(name: str, mode='r') -> dict:
 
 class Config(metaclass=Singleton):
 
-    def __init__(self, config_file="app.yml"):
+    def __init__(self, config_file="app.yaml"):
         self.__config_file = config_file
         self.__conf = load_conf_yaml(config_file)
 
