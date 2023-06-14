@@ -17,6 +17,8 @@ class KafkaProducer(metaclass=Singleton):
         bootstrap_server = conf.get("kafka").get("bootstrap.servers")
         print(f'start init kafka server: {bootstrap_server}')
         self.__producer = Producer({'bootstrap.servers': bootstrap_server})
+        
+        print(self.__producer)
 
     def producer(self):
         return self.__producer
