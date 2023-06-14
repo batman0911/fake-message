@@ -19,6 +19,8 @@ class KafkaConsumer(metaclass=Singleton):
         group_id = kafka_conf.get("group.id")
         auto_offset_reset = kafka_conf.get("auto.offset.reset") if kafka_conf.get("auto.offset.reset") is not None \
             else 'earliest'
+
+        print(f'init kafka consumer, server: {bootstrap_server}, group-id: {group_id}')
         self.__consumer = Consumer({
             'bootstrap.servers': bootstrap_server,
             'group.id': group_id,
