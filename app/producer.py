@@ -32,9 +32,12 @@ def delivery_report(err, msg):
 
 
 if __name__ == '__main__':
+    topic = conf.get('kafka').get('topic')
+    
+    print(f'start kafka producer, topic: {topic}')
+    
     producer = KafkaProducer().producer()
     running = True
-    topic = conf.get('kafka').get('topic')
     
     while running:
         wait_time = random.randint(1, 1000)
@@ -51,3 +54,4 @@ if __name__ == '__main__':
         }
         
         producer.produce(topic, key=key, value=json.dumps(msg), callback=delivery_report)
+        print(f'sent, key: {key}')
