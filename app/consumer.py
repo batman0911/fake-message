@@ -26,6 +26,8 @@ class KafkaConsumer(metaclass=Singleton):
             'group.id': group_id,
             'auto.offset.reset': auto_offset_reset
         })
+        
+        print(f'init kafka consumer, server: {bootstrap_server}, topic: {topic}, group-id: {group_id}')
 
     def consumer(self):
         return self.__consumer
