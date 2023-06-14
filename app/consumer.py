@@ -8,7 +8,7 @@ conf = Config().conf()
 class KafkaConsumer(metaclass=Singleton):
 
     __consumer = Consumer({
-        'bootstrap.servers': 'localhost:9092',
+        'bootstrap.servers': conf.get('kafka').get('bootstrap.servers'),
         'group.id': 'linhnm',
         'auto.offset.reset': 'earliest'
     })

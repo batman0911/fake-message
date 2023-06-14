@@ -10,7 +10,7 @@ conf = Config().conf()
 
 
 class KafkaProducer(metaclass=Singleton):
-    __producer = Producer({'bootstrap.servers': 'localhost:9092'})
+    __producer = Producer({'bootstrap.servers': conf.get('kafka').get('bootstrap.servers')})
 
     def __init__(self):
         """load config from app.yml and init kafka producer"""
