@@ -3,7 +3,7 @@ common:
   author: Linhnm20
 
 kafka:
-  bootstrap.servers: localhost:9092
+  bootstrap.servers: 94.10.10.131:9092
   topic: fenio
   group.id: fake-message-1
 
