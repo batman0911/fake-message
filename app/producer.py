@@ -70,14 +70,14 @@ if __name__ == '__main__':
     
     init_state()
     
-    topic = conf.get('kafka').get('topic')
+    logTopic = conf.get('kafka').get('logTopic')
 
-    print(f'start kafka producer, topic: {topic}')
+    print(f'start kafka producer, topic: {logTopic}')
     
     producer = KafkaProducer().producer()
     running = True
     
-    push_messages(running, producer, topic)
+    push_messages(running, producer, logTopic)
 
     
         

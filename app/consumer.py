@@ -27,17 +27,17 @@ class KafkaConsumer(metaclass=Singleton):
             'auto.offset.reset': auto_offset_reset
         })
         
-        print(f'init kafka consumer, server: {bootstrap_server}, topic: {topic}, group-id: {group_id}')
+        print(f'init kafka consumer, server: {bootstrap_server}, group-id: {group_id}')
 
     def consumer(self):
         return self.__consumer
 
 
 if __name__ == '__main__':
-    topic = conf.get('kafka').get('topic')
+    messageTopic = conf.get('kafka').get('messageTopic')
     
     consumer = KafkaConsumer().consumer()
-    consumer.subscribe([topic])
+    consumer.subscribe([messageTopic])
     while True:
         msg = consumer.poll(1.0)
         if msg is None:

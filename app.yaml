@@ -4,7 +4,8 @@ common:
 
 kafka:
   bootstrap.servers: 94.10.10.131:9092
-  topic: fenio
+  logTopic: fenio
+  messageTopic: fenio-target
   group.id: fake-message-1
 
 customer:
